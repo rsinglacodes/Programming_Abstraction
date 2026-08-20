@@ -1,5 +1,5 @@
-public class DoublyLLbeg {
-    
+public class DoublyLLdel {
+
     static class Node{
         int data;
         Node next;
@@ -10,13 +10,13 @@ public class DoublyLLbeg {
         }
     }
 
-    static Node IAB(Node head,int value){
-        Node newnode = new Node(value);
-        newnode.next=head;
-        if(head!=null){
-            head.prev=newnode;
+    static Node deletebegg(Node head){
+
+        if(head.next!=null){
+            head=head.next;
+            head.prev=null;
         }
-        head= newnode;
+
         return head;
     }
     
@@ -43,9 +43,13 @@ public class DoublyLLbeg {
 
         System.out.println("Original :");
         print(head);
-        head = IAB(head, 5);
-        System.out.println("After inserting at first :");
+        head = deletebegg(head);
+        System.out.println("After deleting at first :");
         print(head);
+        
+
 
     }
 }
+
+

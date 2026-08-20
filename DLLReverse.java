@@ -1,4 +1,4 @@
-public class DoublyLLbeg {
+public class DLLReverse {
     
     static class Node{
         int data;
@@ -10,16 +10,21 @@ public class DoublyLLbeg {
         }
     }
 
-    static Node IAB(Node head,int value){
-        Node newnode = new Node(value);
-        newnode.next=head;
-        if(head!=null){
-            head.prev=newnode;
+    static Node reverse(Node head){
+        Node curr=head;
+        Node newNode = null;
+
+        while(curr!=null){
+            Node temp = curr.prev;
+            curr.prev=curr.next;
+            curr.next = temp;
+            newNode = curr;
+            curr=curr.prev;
+
         }
-        head= newnode;
-        return head;
+        return newNode;
     }
-    
+
     static void print(Node head){
         Node temp = head;
         while(temp!=null){
@@ -41,10 +46,7 @@ public class DoublyLLbeg {
         third.next=fourth;
         fourth.prev=third;
 
-        System.out.println("Original :");
-        print(head);
-        head = IAB(head, 5);
-        System.out.println("After inserting at first :");
+        head = reverse(head);                                                                                                                                                                                                                       
         print(head);
 
     }
