@@ -1,7 +1,7 @@
 import java.util.*;
 
 class backtracking {
-     static List<List<Integer>> ans = new ArrayList<>();
+    static List<List<Integer>> ans = new ArrayList<>();
     static void solve(int[] nums,int index,List<Integer> current){
         if(index==nums.length){
             ans.add(new ArrayList<>(current));
